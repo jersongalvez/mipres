@@ -18,7 +18,7 @@ if (empty($_SESSION['NIT_EPS'])) {
             $_SESSION['NOM_EPS'] = $row['NOM_EPS'];
             $_SESSION['PRETOCKENSUB'] = $row['PRETOCKENSUB'];
             $_SESSION['PRETOCKEN'] = $row['PRETOCKEN'];
-            $_SESSION['RUTA_PROYECTO'] = 'http://192.168.20.113/MIPRES/';
+            $_SESSION['RUTA_PROYECTO'] = 'http://192.168.20.240/MIPRES/';
         }
     }
     sqlsrv_free_stmt($stmt);
@@ -37,6 +37,7 @@ $user = $_SESSION["usuario"];
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
+        <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
 
         <title>Módulo Mipres</title>
 
@@ -358,3 +359,4 @@ $user = $_SESSION["usuario"];
                                 background:#fff;
                             }
                         </style>
+                        
