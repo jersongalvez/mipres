@@ -107,7 +107,8 @@ $user = $_SESSION["usuario"];
                 </li>
 
                 <?php
-                if ($user <> 'IDIAZ' and $user <> 'HERNANDEZ') {
+                //dejar aca los nuevos usuarios de recobros
+                if ($user <> 'IDIAZ' and $user <> 'HERNANDEZ' and $user <> 'LLGUZMAN' and $user <> 'JDUQUE') {
                     ?>
 
                     <!-- Nav Item - Utilities Collapse Menu -->
@@ -150,7 +151,7 @@ $user = $_SESSION["usuario"];
                 </li>
 
                 <?php
-                if ($user == 'IDIAZ' or $user == 'HERNANDEZ' or $user == 'LCORTES') {
+                if ($user == 'IDIAZ' or $user == 'HERNANDEZ' or $user == 'LCORTES' or $user <> 'LLGUZMAN' or $user <> 'JDUQUE') {
                     ?>
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities2  " aria-expanded="true" aria-controls="collapseUtilities">
@@ -169,7 +170,7 @@ $user = $_SESSION["usuario"];
 
 
                 <?php
-                if ($user == 'IDIAZ' or $user == 'HERNANDEZ' or $user == 'LCORTES') {
+                if ($user == 'IDIAZ' or $user == 'HERNANDEZ' or $user == 'LCORTES' or $user <> 'LLGUZMAN' or $user <> 'JDUQUE') {
                     ?>
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities50" aria-expanded="true" aria-controls="collapseUtilities">
