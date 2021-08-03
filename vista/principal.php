@@ -37,7 +37,6 @@ $user = $_SESSION["usuario"];
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
 
         <title>Módulo Mipres</title>
 
@@ -107,8 +106,8 @@ $user = $_SESSION["usuario"];
                 </li>
 
                 <?php
-                //dejar aca los nuevos usuarios de recobros
                 if ($user <> 'IDIAZ' and $user <> 'HERNANDEZ' and $user <> 'LLGUZMAN' and $user <> 'JDUQUE') {
+
                     ?>
 
                     <!-- Nav Item - Utilities Collapse Menu -->
@@ -151,7 +150,7 @@ $user = $_SESSION["usuario"];
                 </li>
 
                 <?php
-                if ($user == 'IDIAZ' or $user == 'HERNANDEZ' or $user == 'LCORTES' or $user <> 'LLGUZMAN' or $user <> 'JDUQUE') {
+		if ($user == 'IDIAZ' or $user == 'HERNANDEZ' or $user == 'LCORTES' or $user <> 'LLGUZMAN' or $user <> 'JDUQUE') {
                     ?>
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities2  " aria-expanded="true" aria-controls="collapseUtilities">
@@ -170,9 +169,9 @@ $user = $_SESSION["usuario"];
 
 
                 <?php
-                if ($user == 'IDIAZ' or $user == 'HERNANDEZ' or $user == 'LCORTES' or $user <> 'LLGUZMAN' or $user <> 'JDUQUE') {
-                    ?>
-                    <li class="nav-item">
+               if ($user == 'IDIAZ' or $user == 'HERNANDEZ' or $user == 'LCORTES' or $user <> 'LLGUZMAN' or $user <> 'JDUQUE') {
+                    ?>                  
+		<li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities50" aria-expanded="true" aria-controls="collapseUtilities">
                             <i class="fas fa-fw fa-folder"></i>
                             <span>Facturación</span>
@@ -360,4 +359,3 @@ $user = $_SESSION["usuario"];
                                 background:#fff;
                             }
                         </style>
-                        

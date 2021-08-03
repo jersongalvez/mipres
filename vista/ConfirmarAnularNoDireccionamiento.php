@@ -1,4 +1,5 @@
 
+
 <div class="row">
     <div class="col-md-3 sm-12">
         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -14,7 +15,7 @@
                 <H4> Anular No Direccionamiento</H4>
             </div>
             <div class="card-body">
-                <center><H4>Â¿Esta seguro de Anular el No Direccionamiento <?php echo $_POST['IDNODireccionamiento']; ?>?</H4></center><br>
+                <center><H4>¿Esta seguro de Anular el No Direccionamiento <?php echo $_POST['IDNODireccionamiento']; ?>?</H4></center><br>
                 <form class="" action="index.php?x=023" method="post" >
                     <!--<input type="hidden" class="form-control" id="NO_SOLICITUD" name="NO_SOLICITUD" value="<?php //echo $_POST['NO_SOLICITUD']; ?>">-->
                     <input type="hidden" class="form-control" id="TABLA" name="TABLA" value="<?php echo $_POST['TABLA']; ?>">
@@ -32,8 +33,6 @@
     </div>
 </div>
 
-
-
-
+ 
 
 

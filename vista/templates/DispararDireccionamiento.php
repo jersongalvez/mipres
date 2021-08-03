@@ -27,9 +27,9 @@
                         $NO_SOLICITUD = $_POST['NO_SOLICITUD'];
                         $TABLA = $_POST['TABLA'];
                         $CD_SERVICIO = $_POST['CD_SERVICIO'];
-//echo $NO_SOLICITUD.'<br>';
-//echo $TABLA.'<br>';
-//echo $CD_SERVICIO.'<br>';
+                        //echo $NO_SOLICITUD.'<br>';
+                        //echo $TABLA.'<br>';
+                        //echo $CD_SERVICIO.'<br>';
 
 
                         if (isset($_GET["x"])) {
@@ -38,10 +38,12 @@
                                     require_once("services/PUT-api-Direccionamiento-nit-token.php");
                                     if (!curl_errno($ch)) {
                                         switch ($http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE)) {
-                                            
-                                            case 200:  # OK
 
-                                                $sql = "UPDATE SERVICIOS_AUTORIZADOS SET IDENTIFICADOR = ?, IDDIRECCIONAMIENTO = ?, DIREC_USUARIO = ?, DIREC_FECHA = CURRENT_TIMESTAMP WHERE NO_SOLICITUD = '" . $_POST['NO_SOLICITUD'] . "' AND TABLA = '" . $_POST['TABLA'] . "' AND CD_SERVICIO = '" . $_POST['CD_SERVICIO'] . "'; ";
+                                            case 200:  # OK
+                                            
+                                                //$sql = "UPDATE SERVICIOS_AUTORIZADOS SET IDENTIFICADOR = ?, IDDIRECCIONAMIENTO = ?, DIREC_USUARIO = ?, DIREC_FECHA = CURRENT_TIMESTAMP WHERE NO_SOLICITUD = '" . $_POST['NO_SOLICITUD'] . "' AND TABLA = '" . $_POST['TABLA'] . "' AND CD_SERVICIO LIKE '%" . $_POST['CD_SERVICIO'] . "%'; ";
+                                                $sql = "UPDATE SERVICIOS_AUTORIZADOS SET IDENTIFICADOR = ?, IDDIRECCIONAMIENTO = ?, DIREC_USUARIO = ?, DIREC_FECHA = CURRENT_TIMESTAMP "
+                                                        . "WHERE NO_SOLICITUD = '" . $_POST['NO_SOLICITUD'] . "' AND TABLA = '" . $_POST['TABLA'] . "'";
 
                                                 $registro = $result;
                                                 $registro = json_decode($registro, true);

@@ -45,11 +45,11 @@ if (/* (!empty($_POST['NO_SOLICITUD'])) and */ (!empty($_POST['TABLA'])) and (!e
                                                 if ($stmt === FALSE) {
                                                     echo "<div class='alert alert-danger alert-dismissible'>";
                                                     echo "<button type='button' class='close' data-dismiss='alert'>&times;</button>";
-                                                    echo "<strong>Error!</strong> Se hizo la anulaci贸n, pero no se pudo proceder con la solucitud en la base de datos, por favor intente de nuevo.</div>";
+                                                    echo "<strong>Error!</strong> Se hizo la anulaci髇, pero no se pudo proceder con la solucitud en la base de datos, por favor intente de nuevo.</div>";
                                                 } else {
                                                     echo "<div class='alert alert-success alert-dismissible'>";
                                                     echo "<button type='button' class='close' data-dismiss='alert'>&times;</button>";
-                                                    echo "<strong>Mensaje:</strong> Se ha realizado la anulaci贸n del No Direccionamiento " . $_POST['IDNODireccionamiento'] . "</div>";
+                                                    echo "<strong>Mensaje:</strong> Se ha realizado la anulaci髇 del No Direccionamiento " . $_POST['IDNODireccionamiento'] . "</div>";
                                                 }
                                                 sqlsrv_free_stmt($stmt);
                                                 break;
@@ -67,7 +67,7 @@ if (/* (!empty($_POST['NO_SOLICITUD'])) and */ (!empty($_POST['TABLA'])) and (!e
                                         </div>
                                         <?php
                                         $info = curl_getinfo($ch);
-                                        $mensaje_mipres = "Tiempo de ejecuci贸n de la consulta: " . $info['total_time'] . " ms, a solicitud de la IP: " . $info['local_ip'] . " codigo de respuesta: " . $http_code . " resultado de la transacci贸n: " . $result;
+                                        $mensaje_mipres = "Tiempo de ejecuci髇 de la consulta: " . $info['total_time'] . " ms, a solicitud de la IP: " . $info['local_ip'] . " codigo de respuesta: " . $http_code . " resultado de la transacci髇: " . $result;
                                         ?>
                                         <script type="text/javascript">
                                             document.getElementById("resultado_mipres").value = '<?php echo $mensaje_mipres ?>';
