@@ -81,12 +81,13 @@ class Facturacion {
      * @param int $ID
      * @param int $IDDatosFacturado
      * @param int $NoPrescripcion
+     * @param String $cod_usuario
      * @return obj
      */
-    public function insertar_idWS($ID, $IDDatosFacturado, $NoPrescripcion) {
+    public function insertar_idWS($ID, $IDDatosFacturado, $NoPrescripcion, $cod_usuario) {
 
-        $sql = "INSERT INTO MIPRES_DATOS_FACTURADOS WITH(ROWLOCK) (ID, IDDatosFacturado, NoPrescripcion, EstDatosFacturado) "
-                . "VALUES ('$ID','$IDDatosFacturado','$NoPrescripcion','1')";
+        $sql = "INSERT INTO MIPRES_DATOS_FACTURADOS WITH(ROWLOCK) (ID, IDDatosFacturado, NoPrescripcion, EstDatosFacturado, COD_USUARIO, FEC_PROCESADO) "
+                . "VALUES ('$ID','$IDDatosFacturado','$NoPrescripcion','1','$cod_usuario',GETDATE())";
 
         return ejecutarConsulta($sql);
     }
@@ -115,11 +116,13 @@ class Facturacion {
      * Metodo que anula una factura cambiando su estado a cero(0)
      * @param String $Id
      * @param String $IDDatosFacturado
+     * @param String $cod_usuario
      * @return obj
      */
-    public function actualizar_facturaAnulada($Id, $IDDatosFacturado) {
+    public function actualizar_facturaAnulada($Id, $IDDatosFacturado, $cod_usuario) {
 
-        $sql = "UPDATE MIPRES_DATOS_FACTURADOS WITH(ROWLOCK) SET EstDatosFacturado = '0' WHERE ID = '$Id' AND IDDatosFacturado = '$IDDatosFacturado' ";
+        $sql = "UPDATE MIPRES_DATOS_FACTURADOS WITH(ROWLOCK) SET EstDatosFacturado = '0', COD_USUARIO = '$cod_usuario', FEC_PROCESADO = GETDATE() "
+                . "WHERE ID = '$Id' AND IDDatosFacturado = '$IDDatosFacturado' ";
 
         return ejecutarConsulta($sql);
     }

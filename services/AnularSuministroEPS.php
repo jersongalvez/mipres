@@ -49,16 +49,16 @@ if (!empty($_SESSION['NIT_EPS'])) {
                         <div class="container">
 
 
-            <?php
-            if (!curl_errno($ch)) {
+                            <?php
+                            if (!curl_errno($ch)) {
 
-                switch ($http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE)) {
-                    case 200:  # OK
+                                switch ($http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE)) {
+                                    case 200:  # OK
 
-                        $sql = " UPDATE MIPRES_SUMINISTRO SET EstSuministro	= '0', FecAnulacion = GETDATE() WHERE IDSuministro = '" . $_POST['IDSuministro'] . "';";
+                                        $sql = " UPDATE MIPRES_SUMINISTRO SET EstSuministro = '0', FecAnulacion = GETDATE(), [COD_USUARIO] = '" . $_SESSION["usuario"] . "', [FEC_PROCESADO]= GETDATE() WHERE IDSuministro = '" . $_POST['IDSuministro'] . "';";
 
-                        sql($conn, $sql);
-                        ?>
+                                        sql($conn, $sql);
+                                        ?>
 
                                         <br>
 
@@ -70,10 +70,10 @@ if (!empty($_SESSION['NIT_EPS'])) {
                                             </div>
                                         </div>
                                         <br>
-                        <?php
-                        break;
-                }
-                ?>
+                                        <?php
+                                        break;
+                                }
+                                ?>
                                 <div class="form-row" >
                                     <div class="col-md-12 sm-12">
                                         <label>Resultado MIPRES:</label>

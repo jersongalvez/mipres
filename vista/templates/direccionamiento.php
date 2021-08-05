@@ -109,7 +109,7 @@ if ((!empty($_POST['NO_SOLICITUD'])) and (!empty($_POST['TABLA'])) and (!empty($
                                         <label>Tipo de Documento</label>
                                     </div>
                                     <div class="col-md-8 sm-12">
-                                        <input type="text" class="form-control" id="TipoIDPaciente" name="TipoIDPaciente" required readonly value="<?php echo $row['TP_IDENT_AFILIA']; ?>">
+                                        <input type="text" class="form-control" id="TipoIDPaciente" name="TipoIDPaciente" required readonly value="<?php echo ($row['TP_IDENT_AFILIA'] === 'CN') ? "NV" : $row['TP_IDENT_AFILIA']; ?>">
                                     </div>
                                 </div>
                                 <div class="form-row">

@@ -106,8 +106,7 @@ $user = $_SESSION["usuario"];
                 </li>
 
                 <?php
-                if ($user <> 'IDIAZ' and $user <> 'HERNANDEZ' and $user <> 'LLGUZMAN' and $user <> 'JDUQUE') {
-
+                if ($user <> 'IDIAZ' and $user <> 'HERNANDEZ' and $user <> 'LLGUZMAN' and $user <> 'JDUQUE' and $user <> 'LOROZCO') {
                     ?>
 
                     <!-- Nav Item - Utilities Collapse Menu -->
@@ -150,7 +149,7 @@ $user = $_SESSION["usuario"];
                 </li>
 
                 <?php
-		if ($user == 'IDIAZ' or $user == 'HERNANDEZ' or $user == 'LCORTES' or $user <> 'LLGUZMAN' or $user <> 'JDUQUE') {
+                if ($user == 'IDIAZ' or $user == 'HERNANDEZ' or $user == 'LCORTES' or $user == 'LLGUZMAN' or $user == 'JDUQUE' or $user == 'LOROZCO') {
                     ?>
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities2  " aria-expanded="true" aria-controls="collapseUtilities">
@@ -169,9 +168,9 @@ $user = $_SESSION["usuario"];
 
 
                 <?php
-               if ($user == 'IDIAZ' or $user == 'HERNANDEZ' or $user == 'LCORTES' or $user <> 'LLGUZMAN' or $user <> 'JDUQUE') {
+                if ($user == 'IDIAZ' or $user == 'HERNANDEZ' or $user == 'LCORTES' or $user == 'LLGUZMAN' or $user == 'JDUQUE' or $user == 'LOROZCO') {
                     ?>                  
-		<li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities50" aria-expanded="true" aria-controls="collapseUtilities">
                             <i class="fas fa-fw fa-folder"></i>
                             <span>Facturación</span>

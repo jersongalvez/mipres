@@ -30,6 +30,7 @@
 					<option value="PE">PE</option>
 					<option value="AS">AS</option>
 					<option value="MS">MS</option>
+                                        <option value="CN">CN</option>
 					</select>
 					</div>
 					<div class="col-md-6 sm-12">

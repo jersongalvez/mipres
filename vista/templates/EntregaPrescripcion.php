@@ -6,16 +6,16 @@ $NoPrescripcion = $_POST['NoPrescripcion'];
 
 if (!empty($NoPrescripcion)) {
 
-	$sql = "
+    $sql = "
 SELECT MP.NoPrescripcion,
 MP.ID,  IDReporteEntrega,   MP.NoPrescripcion,  MP.TipoTec, MP.ConTec, MP.TipoIDPaciente,   MP.NoIDPaciente,    
 MP.NoEntrega,   EstadoEntrega,  MP.CausaNoEntrega,  MP.ValorEntregado,  CodTecEntregado,    MP.CantTotEntregada,    
 MP.NoLote,  FecEntrega, FecRepEntrega,  EstRepEntrega,  MS.ID ID_Suministro,    IDSuministro No_Suministro
 FROM MIPRES_ENTREGA_PROVEEDOR MP LEFT JOIN MIPRES_SUMINISTRO MS
 ON  MP.ID = MS.ID and MS.EstSuministro <> '0'
-WHERE MP.NoPrescripcion = '".$NoPrescripcion."'
+WHERE MP.NoPrescripcion = '" . $NoPrescripcion . "'
 AND MP.EstRepEntrega <> '0'  
-order by MP.NoEntrega desc";   
+order by MP.NoEntrega desc";
 
     $stmt2 = sqlsrv_query($conn, $sql, array());
 
@@ -54,12 +54,12 @@ order by MP.NoEntrega desc";
                             <td><?php echo $row2['ConTec']; ?></td>
                             <td><?php echo $row2['NoEntrega']; ?></td>
                             <td><?php
-                if ($row2['EstadoEntrega'] == '0') {
-                    echo "No se entrega";
-                } elseif ($row2['EstadoEntrega'] == '1') {
-                    echo "Se entregó";
-                }
-                        ?></td>
+                                if ($row2['EstadoEntrega'] == '0') {
+                                    echo "No se entrega";
+                                } elseif ($row2['EstadoEntrega'] == '1') {
+                                    echo "Se entregó";
+                                }
+                                ?></td>
                             <td><?php echo '$ ' . number_format($row2['ValorEntregado']); ?></td>
                             <td><?php echo $row2['CodTecEntregado']; ?></td>
                             <td><?php echo $row2['CantTotEntregada']; ?></td>

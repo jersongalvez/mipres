@@ -141,7 +141,7 @@ switch ($_GET["op"]) {
 
         if ($rspta1) {
 
-            $rspta2 = $facturacion->insertar_idWS($ID2, $IDDatosFacturado2, $NoPrescripcion);
+            $rspta2 = $facturacion->insertar_idWS($ID2, $IDDatosFacturado2, $NoPrescripcion, $_SESSION["usuario"]);
         }
 
         echo $rspta2 ? true : false;
@@ -230,7 +230,7 @@ switch ($_GET["op"]) {
         $factura          = limpiarCadena($_REQUEST["factura"]);
         
         
-        $rspta1 = $facturacion->actualizar_facturaAnulada($Id, $IDDatosFacturado);
+        $rspta1 = $facturacion->actualizar_facturaAnulada($Id, $IDDatosFacturado, $_SESSION["usuario"]);
 
         if ($rspta1) {
 

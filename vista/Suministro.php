@@ -60,10 +60,10 @@
                     if (!empty($radicado)) {
 
                         $sql = "
-	SELECT DISTINCT NOPRESCRIPCION, CODEPS, IIF(REPORTMIPRES='NOPRESCRIPCION','PRESCRIPCION','TUTELA') REPORTMIPRES,
-	FPRESCRIPCION, TIPOIDPACIENTE+' '+NROIDPACIENTE IDENTIFICACION,  REPLACE(PNPACIENTE+' '+SNPACIENTE+' '+PAPACIENTE+' '+SAPACIENTE, '  ', ' ') NOMBRE, dbo.fnc_valor_mipres('PRESCRIPCION','CODAMBATE',CODAMBATE) CODAMBATE, (SELECT DES_TEM_TOKEN FROM PRS_TEM_TOKEN WHERE TIP_TEM_TOKEN =  IIF(CODEPS= 'EPSI06','S','C')) TOKEN
-	FROM  MIPRES_PRESCRIPCION
-	WHERE NOPRESCRIPCION = '" . $radicado . "' ";
+                            SELECT DISTINCT NOPRESCRIPCION, CODEPS, IIF(REPORTMIPRES='NOPRESCRIPCION','PRESCRIPCION','TUTELA') REPORTMIPRES,
+                            FPRESCRIPCION, TIPOIDPACIENTE+' '+NROIDPACIENTE IDENTIFICACION,  REPLACE(PNPACIENTE+' '+SNPACIENTE+' '+PAPACIENTE+' '+SAPACIENTE, '  ', ' ') NOMBRE, dbo.fnc_valor_mipres('PRESCRIPCION','CODAMBATE',CODAMBATE) CODAMBATE, (SELECT DES_TEM_TOKEN FROM PRS_TEM_TOKEN WHERE TIP_TEM_TOKEN =  IIF(CODEPS= 'EPSI06','S','C')) TOKEN
+                            FROM  MIPRES_PRESCRIPCION
+                            WHERE NOPRESCRIPCION = '" . $radicado . "' ";
                         $stmt2 = sqlsrv_query($conn, $sql, array());
 
                         if ($stmt2 !== NULL) {
@@ -125,21 +125,8 @@
                     ?>
 
 
-
-
-
-
-
-
-
-
-
-
                     <br>
                 </div>
-
-
-
 
             </div>
         </div>
