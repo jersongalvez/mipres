@@ -19,6 +19,7 @@ if (empty($_SESSION['NIT_EPS'])) {
             $_SESSION['PRETOCKENSUB'] = $row['PRETOCKENSUB'];
             $_SESSION['PRETOCKEN'] = $row['PRETOCKEN'];
             $_SESSION['RUTA_PROYECTO'] = 'http://192.168.20.240/MIPRES/';
+            //$_SESSION['RUTA_PROYECTO'] = 'http://192.168.20.122:8080/MIPRES/';
         }
     }
     sqlsrv_free_stmt($stmt);
@@ -106,7 +107,7 @@ $user = $_SESSION["usuario"];
                 </li>
 
                 <?php
-                if ($user <> 'IDIAZ' and $user <> 'HERNANDEZ' and $user <> 'LLGUZMAN' and $user <> 'JDUQUE' and $user <> 'LOROZCO') {
+                if ($user <> 'MCAPERA' and $user <> 'IDIAZ' and $user <> 'HERNANDEZ' and $user <> 'LLGUZMAN' and $user <> 'JDUQUE' and $user <> 'LOROZCO' and $user <> 'LPERDOMO' ) {
                     ?>
 
                     <!-- Nav Item - Utilities Collapse Menu -->
@@ -127,13 +128,8 @@ $user = $_SESSION["usuario"];
                             </div>
                         </div>
                     </li>
-
-
                 <?php }
                 ?>
-
-
-
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                         <i class="fas fa-fw fa-folder"></i>
@@ -149,7 +145,7 @@ $user = $_SESSION["usuario"];
                 </li>
 
                 <?php
-                if ($user == 'IDIAZ' or $user == 'HERNANDEZ' or $user == 'LCORTES' or $user == 'LLGUZMAN' or $user == 'JDUQUE' or $user == 'LOROZCO') {
+                if ($user == 'MCAPERA' or $user == 'IDIAZ' or $user == 'HERNANDEZ' or $user == 'LCORTES' or $user == 'LLGUZMAN' or $user == 'JDUQUE' or $user == 'LOROZCO' or $user == 'LPERDOMO'  or $user == 'JGALVEZ' ) {
                     ?>
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities2  " aria-expanded="true" aria-controls="collapseUtilities">
@@ -168,7 +164,7 @@ $user = $_SESSION["usuario"];
 
 
                 <?php
-                if ($user == 'IDIAZ' or $user == 'HERNANDEZ' or $user == 'LCORTES' or $user == 'LLGUZMAN' or $user == 'JDUQUE' or $user == 'LOROZCO') {
+                if ($user == 'MCAPERA' or $user == 'IDIAZ' or $user == 'HERNANDEZ' or $user == 'LCORTES' or $user == 'LLGUZMAN' or $user == 'JDUQUE' or $user == 'LOROZCO' or $user == 'LPERDOMO' or $user == 'JGALVEZ' ) {
                     ?>                  
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities50" aria-expanded="true" aria-controls="collapseUtilities">
@@ -216,6 +212,18 @@ $user = $_SESSION["usuario"];
                 <hr class="sidebar-divider">
 
                 <!-- Sidebar Toggler (Sidebar) -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" target="blank" href="./vista/manual/MANUAL.pdf">
+                        <i class="fas fa-book"></i>
+                        <span>Manual de Usuario</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#">
+                        <i class="fas fa-info"></i>
+                        <span>Version 2.0.0.0</span>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="index.php?x=logout">
                         <i class="fas fa-sign-out-alt"></i>

@@ -17,11 +17,11 @@ define("DB_NAME", "gemaeps");
 
 //usuario de la base de datos
 //define("DB_USERNAME", "sa");
-define("DB_USERNAME", "LCORTES");
+define("DB_USERNAME", "WEB");
 
 //contraseña del usuario de la base de datos
 //define("DB_PASSWORD", "Colombia01+");
-define("DB_PASSWORD", "pra0271LCORTES");
+define("DB_PASSWORD", "Web_4826*");
 
 //definimos la codificacion de los caracteres
 define("DB_ENCODE", "UTF-8");

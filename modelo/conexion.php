@@ -1,10 +1,10 @@
 <?php 
 class Conexion{
 	private static $db_host = "localhost";
-	private static $db_user = "pijaos";
-	private static $db_password = "Colombia01+";
-//	private static $db_user = "root";
-//	private static $db_password = "";
+	//private static $db_user = "pijaos";
+	//private static $db_password = "Colombia01+";
+	private static $db_user = "root";
+    private static $db_password = "";
 	protected $db_name = "gemapres";
 
 	private $conn;

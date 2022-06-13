@@ -53,7 +53,13 @@ function buscar_prescripcion() {
             dom: 'Bfrtip', //Definimos los elementos del control de tabla
             buttons: [],
             columnDefs: [
-                {className: "dt-body-center", "targets": [0, 1, 2, 3, 4]}
+                {className: "dt-body-center", "targets": [0, 1, 2, 3, 4, 5]},
+
+                //Formateo el valor total de la factura
+                {
+                    "targets": [4],
+                    "render": $.fn.dataTable.render.number('.', ',', 2, '$')
+                }
             ],
             "ajax":
                     {
@@ -85,10 +91,11 @@ function buscar_prescripcion() {
 
 
 //Metodo que busca un direcionamiento
-function buscar_direccionamiento(n_identificador, regimen) {
+function buscar_direccionamiento(n_identificador, IDFacturacion, regimen) {
 
     var formData = new FormData();
     formData.append('valor', n_identificador);
+    formData.append('IDFacturacion', IDFacturacion);
     $.ajax({
         url: "controlador/facturacion.php?op=consulta_factura",
         type: "POST",
@@ -115,6 +122,7 @@ function buscar_direccionamiento(n_identificador, regimen) {
                 $("#tip_servicio").val(tipo_tecnologia(datos.TipoTec));
                 $("#consecutivo").val(datos.ConTec);
                 $("#num_entrega").val(datos.NoEntrega);
+                $("#num_Subentrega").val((datos.NoSubEntrega) ? datos.NoSubEntrega : "0");
                 $("#num_factura").val(datos.NoFactura);
                 $("#cod_servicio").val(datos.CodSerTecAEntregado);
                 $("#unidades").val(datos.CantUnMinDis);
@@ -232,10 +240,10 @@ function actuallizar_datosFacturados(IdWS, IDDatosFacturadoWS) {
             $("#msjserver").html("<li> <strong>Estado: </strong> Procesando...</li>");
         },
         success: function (datos) {
-            
+
             $("#msjserver").empty();
             $("#msjserver").html("<li> <strong>Estado: </strong> Datos grabados con éxito!!!</li>");
-            
+
             limpiar_insert();
         },
         error: function (e) {
@@ -279,7 +287,7 @@ function tipo_tecnologia(parametro) {
             retorno = parametro + ' - Dispositivo médico';
             break;
         case 'N':
-            retorno = parametro + ' - Producto Nutriciona';
+            retorno = parametro + ' - Producto Nutricional';
             break;
         case 'S':
             retorno = parametro + ' - Servicio Complementario';
@@ -351,6 +359,7 @@ function limpiar_frm() {
     $("#tip_servicio").val('');
     $("#consecutivo").val('');
     $("#num_entrega").val('');
+    $("#num_Subentrega").val('');
     $("#num_factura").val('');
     $("#cod_servicio").val('');
     $("#unidades").val('');
@@ -399,6 +408,7 @@ function limpiar_insert() {
     $("#tip_servicio").val('');
     $("#consecutivo").val('');
     $("#num_entrega").val('');
+    $("#num_Subentrega").val('');
     $("#num_factura").val('');
     $("#cod_servicio").val('');
     $("#unidades").val('');
@@ -446,7 +456,7 @@ function limpiar_response() {
     $("#ip").empty();
 
     $("#resultadoWS").addClass("hide-div");
-    
+
     $('#btnLimpiar').focus();
 }
 

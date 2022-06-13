@@ -21,38 +21,28 @@
         </div>
     </div>
 </div>
-
 <br>
-
-
-
 <div class="col-md-12 sm-12">
     <div class="card shadow">
-
         <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" data-toggle="tab" href="#home">Prescripción</a>
             </li>
         </ul>
-
-
-
         <?php
-        if (isset($_GET["y"])) {
+          if (isset($_GET["y"])) {
             switch ($_GET["y"]) {
-                case '001':
-                    $radicado = trim($_POST["radicado"]);
-                    ?>
-
-                    <script type="text/javascript">
-                        document.getElementById("radicado").value = '<?php echo $radicado; ?>';
-                    </script>
-
-                    <?php
-                    break;
+              case '001':
+                $radicado = trim($_POST["radicado"]);
+        ?>
+          <script type="text/javascript">
+            document.getElementById("radicado").value = '<?php echo $radicado; ?>';
+           </script>
+           <?php
+             break;
             }
         }
-        ?>
+           ?>
         <div class="col-md-12 sm-12">
             <div class="tab-content">
                 <div id="home" class="tab-pane active"><br>
@@ -111,7 +101,6 @@
                                                         </table>
                                                     </div>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
@@ -123,20 +112,13 @@
                         }
                     }
                     ?>
-
-
                     <br>
                 </div>
-
             </div>
         </div>
-
     </div>
 </div>
 <br>
-
-
-
 
 <div class="modal fade" data-backdrop="static" id="Ven_Direccionamiento">
     <div class="modal-dialog modal-dialog-centered modal-xl" >
@@ -146,9 +128,7 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="container">
-
                 <div id="Info"><center><div class='spinner-border text-success'></div></center></div>
-
             </div> 
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -157,18 +137,32 @@
     </div>
 </div>
 
+<!-- TICKET 670 JERSON GALVEZ  -->
 
+<div class="modal fade" data-backdrop="static" id="Asociar_Suministro">
+    <div class="modal-dialog modal-dialog-centered modal-xl" >
+        <div class="modal-content" >
+            <div class="modal-header">
+                <h5 class="modal-title" id="titulo_modal">ASOCIAR SIMINISTROS A LA FACTURA</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="container">
 
+                <div id="Info2"><center><div class='spinner-border text-success'></div></center></div>
 
-
-
+            </div> 
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END TICKET-->
 
 <div class="col-md-12 sm-12">
     <div class="card shadow">
         <div class="card-body">
-
             <form class="" action="index.php?x=045" method="post" >
-
                 <input type="hidden" class="form-control" id="TokenSuministro" name="TokenSuministro" required readonly>
                 <input type="hidden" class="form-control" id="NoPrescripcion" name="NoPrescripcion" required readonly>
                 <input type="hidden" class="form-control" id="TipoTec" name="TipoTec" required readonly>
@@ -176,8 +170,6 @@
                 <input type="hidden" class="form-control" id="TipoIDPaciente" name="TipoIDPaciente" required readonly>
                 <input type="hidden" class="form-control" id="NoIDPaciente" name="NoIDPaciente" required readonly>
                 <input type="hidden" class="form-control" id="NoEntrega" name="NoEntrega" required readonly>
-
-
                 <div class="form-row">
                     <div class="col-md-4 sm-12">
                         <label>Identificador</label>
@@ -221,7 +213,6 @@
                         <select class="form-control" id="CausaNoEntrega" name="CausaNoEntrega" readonly>
                         </select>
                     </div>
-
                 </div>
                 <div class="form-row">
                     <div class="col-md-4 sm-12">
@@ -263,10 +254,39 @@
                         <input type="text" class="form-control" id="ValorEntregado" name="ValorEntregado" required readonly> 
                     </div>
                 </div>
-
-
+                <div class="form-row" >
+                    <div class="col-md-4 sm-12">
+                        <label>No solicitud</label>
+                    </div>
+                    <div class="col-md-8 sm-12">
+                        <input type="text" class="form-control" id="NoSolicitud" name="NoSolicitud" required readonly> 
+                    </div>
+                </div>
+                <div class="form-row" >
+                    <div class="col-md-4 sm-12">
+                        <label>tabla</label>
+                    </div>
+                    <div class="col-md-8 sm-12">
+                        <input type="text" class="form-control" id="CodigoTabla" name="CodigoTabla" required readonly> 
+                    </div>
+                </div>
+                <div class="form-row" >
+                    <div class="col-md-4 sm-12">
+                        <label>Codigo servicio</label>
+                    </div>
+                    <div class="col-md-8 sm-12">
+                        <input type="text" class="form-control" id="CodigoServicio" name="CodigoServicio" required readonly> 
+                    </div>
+                </div>
+                <div class="form-row" >
+                    <div class="col-md-4 sm-12">
+                        <label>ID Trazabilidad</label>
+                    </div>
+                    <div class="col-md-8 sm-12">
+                        <input type="text" class="form-control" id="IdTrazabiliad" name="IdTrazabiliad" required readonly> 
+                    </div>
+                </div>
                 <br>
-
 
                 <div class="form-row">
                     <div class="col-md-3 sm-3"></div>
@@ -275,23 +295,12 @@
                     </div>
                     <div class="col-md-3 sm-3"></div>
                 </div>
-
-
-
-
             </form>
-
         </div>
     </div>
 </div>
-
-
 <br>
-
-
-
 <script type="text/javascript">
-
 
     function Modal(NoPrescripcion, Token) {
         document.getElementById("TokenSuministro").value = Token;
@@ -302,11 +311,10 @@
         });
     }
 
-
-    function RelacionarEntrega(ID, ValorEntregado, NoLote, NoPrescripcionAsociada, ConTecAsociada, CantTotEntregada, CausaNoEntrega, TipoTec, TipoIDPaciente, NoIDPaciente, NoEntrega) {
+    function RelacionarEntrega(ID, ValorEntregado, NoPrescripcionAsociada, ConTecAsociada, CantTotEntregada, CausaNoEntrega, TipoTec, TipoIDPaciente, NoIDPaciente, NoEntrega) {
         document.getElementById("Identificador").value = ID;
         document.getElementById("ValorEntregado").value = ValorEntregado;
-        document.getElementById("NoLote").value = NoLote;
+        //document.getElementById("NoLote").value = NoLote;
         document.getElementById("NoPrescripcionAsociada").value = NoPrescripcionAsociada;
         document.getElementById("NoPrescripcion").value = NoPrescripcionAsociada;
         document.getElementById("ConTecAsociada").value = ConTecAsociada;
@@ -316,11 +324,32 @@
         document.getElementById("TipoIDPaciente").value = TipoIDPaciente;
         document.getElementById("NoIDPaciente").value = NoIDPaciente;
         document.getElementById("NoEntrega").value = NoEntrega;
+        $("#IdTrazabiliad").val(ID);
         document.getElementById('div_CausaNoEntrega').innerHTML = "<center><div class='spinner-border text-success'></div></center>";
         $.post("vista/templates/CausaNoEntrega.php", {CausaNoEntrega: CausaNoEntrega, TipoTec: TipoTec}, function (data) {
             $("#div_CausaNoEntrega").html(data);
         });
         $('#Ven_Direccionamiento').modal('hide');
-
+        modalSuministros(NoPrescripcionAsociada);
     }
+
+    // TIQUET 670 JERSON GALVEZ
+    function modalSuministros(NoPrescripcion) 
+    {
+        $('#Asociar_Suministro').modal("show");
+        $.post("vista/templates/AsociarSuministroPrescripcion.php", {NoPrescripcion: NoPrescripcion}, function (data) {
+            $("#Info2").html(data);
+            
+        });
+    }
+
+    function AsociarSuministros(solicitud, tabla, servicio) 
+    {   
+        $("#NoSolicitud").val(solicitud);
+        $("#CodigoServicio").val(servicio);
+        $("#CodigoTabla").val(tabla);
+        $('#Asociar_Suministro').modal("hide");
+    }
+
+    //END
 </script>

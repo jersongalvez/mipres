@@ -223,6 +223,7 @@ if (isset($_GET["z"]))
     $url = $_SESSION['RUTA_PROYECTO']."WebService/Prescripcion.php?link=https://wsmipres.sispro.gov.co/wsmipresnopbs/api/PrescripcionXNumero/".$_SESSION['NIT_EPS'].'/'.$_SESSION['PRETOCKENSUB'].'/'.$prs;
     curl_setopt($handle, CURLOPT_URL, $url);
     curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($handle, CURLOPT_SSL_VERIFYPEER, false);
     $output = curl_exec($handle);
     curl_close($handle);
     echo $output;
@@ -231,6 +232,7 @@ if (isset($_GET["z"]))
     $url  = $_SESSION['RUTA_PROYECTO']."WebService/Prescripcion.php?link=https://wsmipres.sispro.gov.co/wsmipresnopbs/api/PrescripcionXNumero/".$_SESSION['NIT_EPS'].'/'.$_SESSION['PRETOCKEN'].'/'.$prs;
     curl_setopt($handle, CURLOPT_URL, $url);
     curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($handle, CURLOPT_SSL_VERIFYPEER, false);
     $output = curl_exec($handle);
     curl_close($handle);
     echo $output;
@@ -240,6 +242,7 @@ if (isset($_GET["z"]))
     $url = $_SESSION['RUTA_PROYECTO']."WebService/Direccionamiento.php?link=https://wsmipres.sispro.gov.co/WSSUMMIPRESNOPBS/api/DireccionamientoXPrescripcion/".$_SESSION['NIT_EPS'].'/'.token_temporal($conn,'S').'/'.$prs;
     curl_setopt($handle, CURLOPT_URL, $url);
     curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($handle, CURLOPT_SSL_VERIFYPEER, false);
     $output = curl_exec($handle);
     curl_close($handle);
     echo $output;
@@ -248,6 +251,7 @@ if (isset($_GET["z"]))
     $url = $_SESSION['RUTA_PROYECTO']."WebService/Direccionamiento.php?link=https://wsmipres.sispro.gov.co/WSSUMMIPRESNOPBS/api/DireccionamientoXPrescripcion/".$_SESSION['NIT_EPS'].'/'.token_temporal($conn,'C').'/'.$prs;
     curl_setopt($handle, CURLOPT_URL, $url);
     curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($handle, CURLOPT_SSL_VERIFYPEER, false);
     $output = curl_exec($handle);
     curl_close($handle);
     echo $output;
@@ -258,6 +262,7 @@ if (isset($_GET["z"]))
     $url = $_SESSION['RUTA_PROYECTO']."WebService/ReporteProveedor.php?link=https://wsmipres.sispro.gov.co/WSSUMMIPRESNOPBS/api/ReporteEntregaXPrescripcion/".$_SESSION['NIT_EPS'].'/'.token_temporal($conn,'S').'/'.$prs;
     curl_setopt($handle, CURLOPT_URL, $url);
     curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($handle, CURLOPT_SSL_VERIFYPEER, false);
     $output = curl_exec($handle);
     curl_close($handle);
     echo $output;
@@ -266,6 +271,7 @@ if (isset($_GET["z"]))
     $url  = $_SESSION['RUTA_PROYECTO']."WebService/ReporteProveedor.php?link=https://wsmipres.sispro.gov.co/WSSUMMIPRESNOPBS/api/ReporteEntregaXPrescripcion/".$_SESSION['NIT_EPS'].'/'.token_temporal($conn,'C').'/'.$prs;
     curl_setopt($handle, CURLOPT_URL, $url);
     curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($handle, CURLOPT_SSL_VERIFYPEER, false);
     $output = curl_exec($handle);
     curl_close($handle);
     echo $output;
@@ -276,6 +282,7 @@ if (isset($_GET["z"]))
     $url = $_SESSION['RUTA_PROYECTO']."WebService/Suministro.php?link=https://wsmipres.sispro.gov.co/WSSUMMIPRESNOPBS/api/SuministroXPrescripcion/".$_SESSION['NIT_EPS'].'/'.token_temporal($conn,'S').'/'.$prs;
     curl_setopt($handle, CURLOPT_URL, $url);
     curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($handle, CURLOPT_SSL_VERIFYPEER, false);
     $output = curl_exec($handle);
     curl_close($handle);
     echo $output;
@@ -284,6 +291,7 @@ if (isset($_GET["z"]))
     $url  = $_SESSION['RUTA_PROYECTO']."WebService/Suministro.php?link=https://wsmipres.sispro.gov.co/WSSUMMIPRESNOPBS/api/SuministroXPrescripcion/".$_SESSION['NIT_EPS'].'/'.token_temporal($conn,'C').'/'.$prs;
     curl_setopt($handle, CURLOPT_URL, $url);
     curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($handle, CURLOPT_SSL_VERIFYPEER, false);
     $output = curl_exec($handle);
     curl_close($handle);
     echo $output;
@@ -294,6 +302,7 @@ if (isset($_GET["z"]))
     $url = $_SESSION['RUTA_PROYECTO']."WebService/Tutelas.php?link=https://wsmipres.sispro.gov.co/wsmipresnopbs/api/TutelaXNumero/".$_SESSION['NIT_EPS'].'/'.$_SESSION['PRETOCKENSUB'].'/'.$prs;
     curl_setopt($handle, CURLOPT_URL, $url);
     curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($handle, CURLOPT_SSL_VERIFYPEER, false);
     $output = curl_exec($handle);
     curl_close($handle);
     echo $output;
@@ -302,6 +311,7 @@ if (isset($_GET["z"]))
     $url  = $_SESSION['RUTA_PROYECTO']."WebService/Tutelas.php?link=https://wsmipres.sispro.gov.co/wsmipresnopbs/api/TutelaXNumero/".$_SESSION['NIT_EPS'].'/'.$_SESSION['PRETOCKEN'].'/'.$prs;
     curl_setopt($handle, CURLOPT_URL, $url);
     curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($handle, CURLOPT_SSL_VERIFYPEER, false);
     $output = curl_exec($handle);
     curl_close($handle);
     echo $output;
@@ -311,6 +321,7 @@ if (isset($_GET["z"]))
     $url = $_SESSION['RUTA_PROYECTO']."WebService/NoDireccionamiento.php?link=https://wsmipres.sispro.gov.co/WSSUMMIPRESNOPBS/api/NODireccionamientoXPrescripcion/".$_SESSION['NIT_EPS'].'/'.token_temporal($conn,'S').'/'.$prs;
     curl_setopt($handle, CURLOPT_URL, $url);
     curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($handle, CURLOPT_SSL_VERIFYPEER, false);
     $output = curl_exec($handle);
     curl_close($handle);
     echo $output;
@@ -319,6 +330,7 @@ if (isset($_GET["z"]))
     $url  = $_SESSION['RUTA_PROYECTO']."WebService/NoDireccionamiento.php?link=https://wsmipres.sispro.gov.co/WSSUMMIPRESNOPBS/api/NODireccionamientoXPrescripcion//".$_SESSION['NIT_EPS'].'/'.token_temporal($conn,'C').'/'.$prs;
     curl_setopt($handle, CURLOPT_URL, $url);
     curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($handle, CURLOPT_SSL_VERIFYPEER, false);
     $output = curl_exec($handle);
     curl_close($handle);
     echo $output;
@@ -328,6 +340,7 @@ if (isset($_GET["z"]))
     $url = $_SESSION['RUTA_PROYECTO']."WebService/JuntaProfesional.php?link=https://wsmipres.sispro.gov.co/wsmipresnopbs/api/JuntaProfesional/".$_SESSION['NIT_EPS'].'/'.$_SESSION['PRETOCKENSUB'].'/'.$prs;
     curl_setopt($handle, CURLOPT_URL, $url);
     curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($handle, CURLOPT_SSL_VERIFYPEER, false);
     $output = curl_exec($handle);
     curl_close($handle);
     echo $output;
@@ -336,6 +349,7 @@ if (isset($_GET["z"]))
     $url  = $_SESSION['RUTA_PROYECTO']."WebService/JuntaProfesional.php?link=https://wsmipres.sispro.gov.co/wsmipresnopbs/api/JuntaProfesional/".$_SESSION['NIT_EPS'].'/'.$_SESSION['PRETOCKEN'].'/'.$prs;
     curl_setopt($handle, CURLOPT_URL, $url);
     curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($handle, CURLOPT_SSL_VERIFYPEER, false);
     $output = curl_exec($handle);
     curl_close($handle);
     echo $output;

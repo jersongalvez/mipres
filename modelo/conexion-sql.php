@@ -1,6 +1,6 @@
 <?php
 $serverName = "192.168.20.250"; //serverName\instanceName
-$connectionInfo = array("Database" => "gemaeps", "UID" => "LCORTES", "PWD" => "pra0271LCORTES");
+$connectionInfo = array("Database" => "gemaeps", "UID" => "WEB", "PWD" => "Web_4826*");
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 if ($conn) {
     ?>

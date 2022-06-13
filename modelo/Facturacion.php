@@ -26,24 +26,25 @@ class Facturacion {
      */
     public function get_prescripcion($prescripcion) {
 
-
         $sql = "SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED "
-                . "SELECT ID, NoFactura, CodEPS, EstFacturacion FROM MIPRES_FACTURACION WITH (NOLOCK) WHERE NoPrescripcion = '$prescripcion' ";
+                . "SELECT ID, IDFacturacion, NoFactura, CodEPS, CantUnMinDis, ValorTotFacturado, EstFacturacion "
+                . "FROM MIPRES_FACTURACION WITH (NOLOCK) WHERE NoPrescripcion = '$prescripcion' ";
 
         return ejecutarConsulta($sql);
     }
 
     /**
      * Metodo que valida si un ID de facturacion existe
-     * @param int $valor
+     * @param int $ID
+     * @param int $IdFacturacion
      * @return obj
      */
-    public function get_facturacion($valor) {
+    public function get_facturacion($ID, $IdFacturacion) {
 
 
         $sql = "SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED "
-                . "SELECT IDFacturacion, TipoTec, ConTec, NoEntrega, NoFactura, CodSerTecAEntregado, CantUnMinDis, ValorUnitFacturado, "
-                . "ValorTotFacturado, CuotaModer, Copago FROM MIPRES_FACTURACION WITH (NOLOCK) WHERE ID = '$valor' ";
+                . "SELECT IDFacturacion, TipoTec, ConTec, NoEntrega, NoSubEntrega, NoFactura, CodSerTecAEntregado, CantUnMinDis, ValorUnitFacturado, "
+                . "ValorTotFacturado, CuotaModer, Copago FROM MIPRES_FACTURACION WITH (NOLOCK) WHERE ID = '$ID' AND IDFacturacion = '$IdFacturacion' ";
 
         return ejecutarConsulta($sql);
     }
@@ -100,7 +101,7 @@ class Facturacion {
     public function buscar_datoFacturado($Noprescripcion) {
 
         $sql = "SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED "
-                . "SELECT MDF.ID, IDDatosFacturado, EstDatosFacturado, MFAC.NoFactura, CONVERT(VARCHAR,MDF.FEC_ACTUALIZACION,113) AS FEC_ACTUALIZACION "
+                . "SELECT MDF.ID, IDDatosFacturado, EstDatosFacturado, LTRIM(RTRIM(MFAC.NoFactura)) NoFactura, CONVERT(VARCHAR,MDF.FEC_ACTUALIZACION,113) AS FEC_ACTUALIZACION "
                 . "FROM MIPRES_DATOS_FACTURADOS MDF WITH (NOLOCK) "
                 . "INNER JOIN MIPRES_FACTURACION MFAC ON MDF.NoPrescripcion = MFAC.NoPrescripcion AND MDF.ID = MFAC.ID "
                 . "WHERE MDF.NoPrescripcion = '$Noprescripcion' AND MFAC.EstFacturacion = '2' ";

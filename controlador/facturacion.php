@@ -19,6 +19,7 @@ $facturacion = new Facturacion();
 
 //Busqueda de prescripciones
 $valor = isset($_POST["valor"]) ? limpiarCadena($_POST["valor"]) : "";
+$IDFacturacion = isset($_POST["IDFacturacion"]) ? limpiarCadena($_POST["IDFacturacion"]) : "";
 
 //Insercion de datos WS
 $token = isset($_POST["n_token"]) ? limpiarCadena($_POST["n_token"]) : "";
@@ -42,7 +43,7 @@ switch ($_GET["op"]) {
     //Busqueda de un radicado
     case 'consulta_factura':
 
-        $results = $facturacion->get_facturacion($valor);
+        $results = $facturacion->get_facturacion($valor, $IDFacturacion);
         $fetch = sqlsrv_fetch_object($results);
 
         echo json_encode($fetch);
@@ -61,12 +62,13 @@ switch ($_GET["op"]) {
         while ($respuesta = sqlsrv_fetch_object($consulta)) {
 
             $data[] = array(
-                "0" => ($respuesta->EstFacturacion == '1') ? "<button type='button' class='btn btn-secondary btn-sm' onclick=buscar_direccionamiento('$respuesta->ID','$respuesta->CodEPS')> Buscar </button>" :
+                "0" => ($respuesta->EstFacturacion == '1') ? "<button type='button' class='btn btn-secondary btn-sm' onclick=buscar_direccionamiento('$respuesta->ID','$respuesta->IDFacturacion','$respuesta->CodEPS')> Buscar </button>" :
                 "<button type='button' class='btn btn-light btn-sm' disabled> Buscar </button>",
                 "1" => $respuesta->ID,
                 "2" => $respuesta->NoFactura,
-                "3" => ($respuesta->CodEPS === 'EPSIC6') ? "Contributivo" : "Subsidiado",
-                "4" => ($respuesta->EstFacturacion == '0') ? "Anulado" : (($respuesta->EstFacturacion == '1') ? "Activo" : "Procesado")
+                "3" => $respuesta->CantUnMinDis,
+                "4" => $respuesta->ValorTotFacturado,
+                "5" => ($respuesta->EstFacturacion == '0') ? "Anulado" : (($respuesta->EstFacturacion == '1') ? "Activo" : "Procesado")
             );
         }
 
@@ -109,6 +111,7 @@ switch ($_GET["op"]) {
         $payload = json_encode($data);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json; charset=utf-8'));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
         curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
 
@@ -161,8 +164,10 @@ switch ($_GET["op"]) {
 
         while ($respuesta = sqlsrv_fetch_object($consulta)) {
 
+	    $no_factura = trim(str_replace(" ", "", $respuesta->NoFactura));
+
             $data[] = array(
-                "0" => ($respuesta->EstDatosFacturado == '1') ? "<button type='button' class='btn btn-secondary btn-sm' onclick=asignar_valorAn('$respuesta->IDDatosFacturado','$respuesta->ID','$respuesta->NoFactura')> Anular </button>" :
+                "0" => ($respuesta->EstDatosFacturado == '1') ? "<button type='button' class='btn btn-secondary btn-sm' onclick=asignar_valorAn('$respuesta->IDDatosFacturado','$respuesta->ID','$no_factura')> Anular </button>" :
                 "<button type='button' class='btn btn-light btn-sm' disabled> Anular </button>",
                 "1" => $respuesta->ID,
                 "2" => $respuesta->IDDatosFacturado,
@@ -202,6 +207,7 @@ switch ($_GET["op"]) {
         $payload = json_encode($data);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json; charset=utf-8'));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
         curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
 

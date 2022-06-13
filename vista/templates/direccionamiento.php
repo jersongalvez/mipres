@@ -27,9 +27,7 @@ if ((!empty($_POST['NO_SOLICITUD'])) and (!empty($_POST['TABLA'])) and (!empty($
         $fecha_autorizacion = $row['FEC_AUTORIZACION']->format('Y-m-d');
         $FecMaxEnt = date("Y-m-d", strtotime($fecha_autorizacion . "+ " . FecMaxEnt($conn, $_POST['NO_SOLICITUD']) . " days"));
         $FecMaxEnt = date("Y-m-d", strtotime($FecMaxEnt . "- 1 days"));
-        ?>    
-
-
+        ?>
 
         <div class="row">
             <div class="col-md-3 sm-12">
@@ -138,7 +136,7 @@ if ((!empty($_POST['NO_SOLICITUD'])) and (!empty($_POST['TABLA'])) and (!empty($
                                             <option value="10"<?php echo $row['SECUENCIA'] == "10" ? 'selected' : ''; ?>>10</option>
                                             <option value="11"<?php echo $row['SECUENCIA'] == "11" ? 'selected' : ''; ?>>11</option>
                                             <option value="12"<?php echo $row['SECUENCIA'] == "12" ? 'selected' : ''; ?>>12</option>
-                                        </select> 
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -146,20 +144,8 @@ if ((!empty($_POST['NO_SOLICITUD'])) and (!empty($_POST['TABLA'])) and (!empty($
                                         <label>Total Sub Entrega</label>
                                     </div>
                                     <div class="col-md-8 sm-12">
-                                        <select  id="NoSubEntrega" class="form-control" name="NoSubEntrega" required>
-                                            <option value="1" <?php echo $row['NUM_ENTREGAS'] == "1" ? 'selected' : ''; ?>>1</option>
-                                            <option value="2" <?php echo $row['NUM_ENTREGAS'] == "2" ? 'selected' : ''; ?>>2</option>
-                                            <option value="3" <?php echo $row['NUM_ENTREGAS'] == "3" ? 'selected' : ''; ?>>3</option>
-                                            <option value="4" <?php echo $row['NUM_ENTREGAS'] == "4" ? 'selected' : ''; ?>>4</option>
-                                            <option value="5" <?php echo $row['NUM_ENTREGAS'] == "5" ? 'selected' : ''; ?>>5</option>
-                                            <option value="6" <?php echo $row['NUM_ENTREGAS'] == "6" ? 'selected' : ''; ?>>6</option>
-                                            <option value="7" <?php echo $row['NUM_ENTREGAS'] == "7" ? 'selected' : ''; ?>>7</option>
-                                            <option value="8" <?php echo $row['NUM_ENTREGAS'] == "8" ? 'selected' : ''; ?>>8</option>
-                                            <option value="9" <?php echo $row['NUM_ENTREGAS'] == "9" ? 'selected' : ''; ?>>9</option>
-                                            <option value="10"<?php echo $row['NUM_ENTREGAS'] == "10" ? 'selected' : ''; ?>>10</option>
-                                            <option value="11"<?php echo $row['NUM_ENTREGAS'] == "11" ? 'selected' : ''; ?>>11</option>
-                                            <option value="12"<?php echo $row['NUM_ENTREGAS'] == "12" ? 'selected' : ''; ?>>12</option>
-                                        </select>  
+                                        <input type="text" id="NoSubEntrega" value="0" class="form-control" name="NoSubEntrega" required readonly>
+                                       
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -187,7 +173,7 @@ if ((!empty($_POST['NO_SOLICITUD'])) and (!empty($_POST['TABLA'])) and (!empty($
                                             <input type="text" class="form-control" id="CodMunEnt" name="CodMunEnt" required readonly value="<?php echo $row['NUM_DEPARTAMENTO'] . $row['NUM_CIUDAD']; ?>">
                                             <input type="text" class="form-control" readonly value="<?php echo NombreDepartamento($conn, $row['NUM_DEPARTAMENTO'] . $row['NUM_CIUDAD']); ?>">
                                             <input type="text" class="form-control" readonly value="<?php echo NombreMunicipio($conn, $row['NUM_DEPARTAMENTO'] . $row['NUM_CIUDAD']); ?>">
-                                        </div> 
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -250,11 +236,11 @@ if ((!empty($_POST['NO_SOLICITUD'])) and (!empty($_POST['TABLA'])) and (!empty($
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-row">
-                                                                    <div class="col-md-12 sm-12">               
+                                                                    <div class="col-md-12 sm-12">
                                                                         <small id="usu"><?php echo $row['DIREC_USUARIO'] ?></small>
                                                                         <small id="fec"><?php echo $row['DIREC_FECHA']->format('d/m/Y'); ?></small>
-                                                                    </div>  
-                                                                </div>                
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -266,7 +252,7 @@ if ((!empty($_POST['NO_SOLICITUD'])) and (!empty($_POST['TABLA'])) and (!empty($
                                                 <?php
                                             }
                                             ?>
-                                        </div>          
+                                        </div>
                                     </div>
                                 </div>
                             </form>
@@ -310,7 +296,7 @@ if ((!empty($_POST['NO_SOLICITUD'])) and (!empty($_POST['TABLA'])) and (!empty($
             </div>
 
             <!-- Modal body -->
-            <div class="modal-body">     
+            <div class="modal-body">
                 <div id="DataDireccionamiento"></div>
             </div>
 

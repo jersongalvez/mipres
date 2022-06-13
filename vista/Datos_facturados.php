@@ -36,7 +36,8 @@
                             <th class="text-center">Seleccionar</th>
                             <th class="text-center">Identificador</th>
                             <th class="text-center">Factura</th>
-                            <th class="text-center">Régimen</th>
+                            <th class="text-center">Cantidad</th>
+                            <th class="text-center">Valor</th>
                             <th class="text-center">Estado</th>
                         </tr>
                     </thead>
@@ -48,7 +49,8 @@
                             <th class="text-center">Seleccionar</th>
                             <th class="text-center">Identificador</th>
                             <th class="text-center">Factura</th>
-                            <th class="text-center">Régimen</th>
+                            <th class="text-center">Cantidad</th>
+                            <th class="text-center">Valor</th>
                             <th class="text-center">Estado</th>
                         </tr>
                     </tfoot>
@@ -101,7 +103,7 @@
             </ul>
 
             <div class="form-row" style="margin-top: 20px">
-                <div class="col-md-5 sm-12">
+                <div class="col-md-3 sm-12">
                     <label>Identificador facturación:</label>
                     <div class="input-group">
                         <input type="text" class="form-control" id="id_facturacion" name="id_facturacion" disabled="true">
@@ -126,6 +128,13 @@
                     <label>Número Entrega:</label>
                     <div class="input-group">
                         <input type="text" class="form-control" id="num_entrega" name="num_entrega" disabled="true">
+                    </div> 
+                </div>
+                
+                <div class="col-md-2 sm-12">
+                    <label>Número Sub-entrega:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="num_Subentrega" name="num_Subentrega" disabled="true">
                     </div> 
                 </div>
             </div> 

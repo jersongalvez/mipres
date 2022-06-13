@@ -49,7 +49,7 @@ $var_NI=$_POST['var_NI'];
 				        <td><small><?php echo $row['ESTADO']; ?></small></td>
 				        <td><small><?php echo $row['NUM_COMITECTC']; ?></small></td>
 				        <td><small><?php echo $row['CD_SERVICIO']; ?></small></td>
-				        <td><small><?php echo $row['OBSERVACION']; ?></small></td>					        
+				        <td><small><?php echo $row['OBSERVACION']; ?></small></td>
 						<td>
 						<?php
 						if (($row['IDDIRECCIONAMIENTO']==NULL) and ($row['ESTADO']<>'AN') and ($row['ESTADO']<>'CO') ) {
@@ -59,7 +59,7 @@ $var_NI=$_POST['var_NI'];
 						<input type="hidden" class="form-control" id="NUM_COMITECTC" name="NUM_COMITECTC" value="<?php echo $row['NUM_COMITECTC']; ?>">
 						<input type="hidden" class="form-control" id="TABLA" name="TABLA" value="<?php echo $row['TABLA']; ?>">
 						<input type="hidden" class="form-control" id="CD_SERVICIO" name="CD_SERVICIO" value="<?php echo $row['CD_SERVICIO']; ?>">
-						<button class="btn btn-outline-dark btn-block" type="submit">Ir</button>  
+						<button class="btn btn-outline-dark btn-block" type="submit">Ir</button>
 						</form>
 						<?php
 						}else{

@@ -22,7 +22,7 @@
                     require_once('modelo/conexion-sql.php');
 
 
-                    if ((!empty($_POST['NO_SOLICITUD'])) and (!empty($_POST['TABLA'])) and (!empty($_POST['CD_SERVICIO'])) and (!empty($_POST['DES_TEM_TOKEN'])) and (!empty($_POST['NoPrescripcion'])) and (!empty($_POST['TipoTec'])) and (!empty($_POST['ConTec'])) and (!empty($_POST['CodSerTecAEntregar'])) and (!empty($_POST['TipoIDPaciente'])) and (!empty($_POST['NoIDPaciente'])) and (!empty($_POST['NoEntrega'])) and (!empty($_POST['NoSubEntrega'])) and (!empty($_POST['TipoIDProv'])) and (!empty($_POST['NoIDProv'])) and (!empty($_POST['CodMunEnt'])) and (!empty($_POST['FecMaxEnt'])) and (!empty($_POST['CantTotAEntregar'])) and (!empty($_POST['DirPaciente']))) {
+                    if ((!empty($_POST['NO_SOLICITUD'])) and (!empty($_POST['TABLA'])) and (!empty($_POST['CD_SERVICIO'])) and (!empty($_POST['DES_TEM_TOKEN'])) and (!empty($_POST['NoPrescripcion'])) and (!empty($_POST['TipoTec'])) and (!empty($_POST['ConTec'])) and (!empty($_POST['CodSerTecAEntregar'])) and (!empty($_POST['TipoIDPaciente'])) and (!empty($_POST['NoIDPaciente'])) and (!empty($_POST['NoEntrega']))  and (!empty($_POST['TipoIDProv'])) and (!empty($_POST['NoIDProv'])) and (!empty($_POST['CodMunEnt'])) and (!empty($_POST['FecMaxEnt'])) and (!empty($_POST['CantTotAEntregar'])) and (!empty($_POST['DirPaciente']))) {
 
                         $NO_SOLICITUD = $_POST['NO_SOLICITUD'];
                         $TABLA = $_POST['TABLA'];

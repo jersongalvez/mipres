@@ -60,7 +60,7 @@ order by MP.NoEntrega desc";
                                     echo "Se entregó";
                                 }
                                 ?></td>
-                            <td><?php echo '$ ' . number_format($row2['ValorEntregado']); ?></td>
+                            <td><?php echo ($row2['ValorEntregado'] == '') ? '' : '$ ' . number_format($row2['ValorEntregado'])?></td>
                             <td><?php echo $row2['CodTecEntregado']; ?></td>
                             <td><?php echo $row2['CantTotEntregada']; ?></td>
                             <td><?php echo $row2['FecEntrega']->format('d/m/Y'); ?></td>
@@ -71,7 +71,7 @@ order by MP.NoEntrega desc";
                                     echo $row2['No_Suministro'];
                                 } else {
                                     ?>
-                                    <button class="btn btn-outline-secondary" type="button" id="BtnRelacionar" onclick="javascript:RelacionarEntrega('<?php echo $row2['ID']; ?>', '<?php echo $row2['ValorEntregado']; ?>', '<?php echo $row2['NoLote']; ?>', '<?php echo $row2['NoPrescripcion']; ?>', '<?php echo $row2['ConTec']; ?>', '<?php echo $row2['CantTotEntregada']; ?>', '<?php echo $row2['CausaNoEntrega']; ?>', '<?php echo $row2['TipoTec']; ?>', '<?php echo $row2['TipoIDPaciente']; ?>', '<?php echo $row2['NoIDPaciente']; ?>', '<?php echo $row2['NoEntrega']; ?>');">Relacionar</button>
+                                    <button class="btn btn-outline-secondary" type="button" id="BtnRelacionar" onclick="javascript:RelacionarEntrega('<?php echo $row2['ID']; ?>', '<?php echo $row2['ValorEntregado']; ?>',  '<?php echo $row2['NoPrescripcion']; ?>', '<?php echo $row2['ConTec']; ?>', '<?php echo $row2['CantTotEntregada']; ?>', '<?php echo $row2['CausaNoEntrega']; ?>', '<?php echo $row2['TipoTec']; ?>', '<?php echo $row2['TipoIDPaciente']; ?>', '<?php echo $row2['NoIDPaciente']; ?>', '<?php echo $row2['NoEntrega']; ?>');">Relacionar</button>
 
                                     <?php
                                 }
