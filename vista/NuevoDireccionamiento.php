@@ -29,6 +29,7 @@
 					<option value="SC">SC</option>
 					<option value="PR">PR</option>
 					<option value="PE">PE</option>
+					<option value="PT">PT</option>
 					<option value="AS">AS</option>
 					<option value="MS">MS</option>
 					<option value="CN">CN</option>
@@ -40,47 +41,34 @@
 					</div>
 					<div class="col-md-2 sm-12">
 					<label for="validationCustom02"><br></label>
-					<button 
+					<button
 					class="btn btn-outline-dark btn-block" type="submit" onclick="javascript:ListarAutorizaciones();">Buscar</button> 
 					<br>
 					</div>
-					</div>					
+					</div>
 			  </div>
 			</div>
 		</div>
- 
-  
-  
 </div>
-  
 <div class="col-md-12 sm-12">
 <br>
 <div id="ListarAutorizaciones"></div>
 </div>
-
-
-
-
-
-
 <script language="javascript">
-function ListarAutorizaciones(){  
-document.getElementById('ListarAutorizaciones').innerHTML = "<center><div class='spinner-border text-success'></center></div>";
+function ListarAutorizaciones(){
+  document.getElementById('ListarAutorizaciones').innerHTML = "<center><div class='spinner-border text-success'></center></div>";
 	var var_TI = document.getElementById("var_TI").value;
 	var var_NI = document.getElementById("var_NI").value;
 	$.post("vista/templates/ListarAutorizaciones.php", {var_TI: var_TI,var_NI:var_NI}, function(data){
 	$("#ListarAutorizaciones").html(data);
-	});        
+  });
 }
 
-
-function tabla_autorizaciones(){   
-	$( "#tabla_autorizaciones" ).toggle( "blind" );  
+function tabla_autorizaciones(){
+  $( "#tabla_autorizaciones" ).toggle( "blind" );
 }
 
 </script>
-
-
 <?php
 if (isset($_GET["y"]))
 {

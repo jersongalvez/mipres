@@ -14,7 +14,7 @@ $var_NI=$_POST['var_NI'];
 	    echo "<div class='alert alert-warning alert-dismissible'>";
 	    echo "<button type='button' class='close' data-dismiss='alert'>&times;</button>";
 	    echo "<strong>Alerta!</strong> No se encuentran resultados.</div>";
-	    }  
+	    }
 	    else{
 		?>
 		<br>
@@ -74,12 +74,9 @@ $var_NI=$_POST['var_NI'];
 	          	</tbody>
 				</table>
 				</div>
-			  <?php  
+			  <?php
 	        }
-    sqlsrv_free_stmt($stmt); 
-
-
-
+    sqlsrv_free_stmt($stmt);
 }else{
 echo "<div class='alert alert-danger alert-dismissible'>";
 echo "<button type='button' class='close' data-dismiss='alert'>&times;</button>";

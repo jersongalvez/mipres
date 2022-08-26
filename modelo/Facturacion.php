@@ -6,7 +6,7 @@
 /////////////////////////     MODELO FACTURACION    ////////////////////////////
 /////////////////////////  DEPARTAMENTO DE DESARROLLO  /////////////////////////
 ///////       CLASE QUE CONTIENE LAS FUNCIONES QUE VALIDAN EL ARCHIVO //////////
-//////////////////////////////  DE FACTURACION    ////////////////////////////// 
+//////////////////////////////  DE FACTURACION    //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 //Incluimos inicialmete la conexion a la base de datos
 require '../config/Conexion.php';
@@ -25,7 +25,6 @@ class Facturacion {
      * @return obj
      */
     public function get_prescripcion($prescripcion) {
-
         $sql = "SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED "
                 . "SELECT ID, IDFacturacion, NoFactura, CodEPS, CantUnMinDis, ValorTotFacturado, EstFacturacion "
                 . "FROM MIPRES_FACTURACION WITH (NOLOCK) WHERE NoPrescripcion = '$prescripcion' ";
@@ -40,8 +39,6 @@ class Facturacion {
      * @return obj
      */
     public function get_facturacion($ID, $IdFacturacion) {
-
-
         $sql = "SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED "
                 . "SELECT IDFacturacion, TipoTec, ConTec, NoEntrega, NoSubEntrega, NoFactura, CodSerTecAEntregado, CantUnMinDis, ValorUnitFacturado, "
                 . "ValorTotFacturado, CuotaModer, Copago FROM MIPRES_FACTURACION WITH (NOLOCK) WHERE ID = '$ID' AND IDFacturacion = '$IdFacturacion' ";
@@ -55,7 +52,6 @@ class Facturacion {
      * @return obj
      */
     public function get_token($regimen, $codurl) {
-
         $obtener_token = ($regimen === 'CONTRIBUTIVO') ? "C" : "S";
 
         $sql = "SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED "
@@ -71,7 +67,6 @@ class Facturacion {
      * @return obj
      */
     public function actualizar_factura($Id, $IDFacturacion) {
-
         $sql = "UPDATE MIPRES_FACTURACION WITH (ROWLOCK) SET EstFacturacion = '2' WHERE ID = '$Id' AND IDFacturacion = '$IDFacturacion' ";
 
         return ejecutarConsulta($sql);
